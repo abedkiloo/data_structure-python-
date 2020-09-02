@@ -67,6 +67,10 @@ class DynamicArray:
 new_array = DynamicArray()
 new_array.add(9)
 new_array.add(2)
+print("Array \n {} \n".format(new_array.get_array_data()))
+new_array.remove()
+
 
 print("Array \n {} \n".format(new_array.get_array_data()))
 print("Size of array \n {} \n".format(new_array.size()))
+print("Index of 2 is {} \n".format(new_array.index_of(2)))
