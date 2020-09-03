@@ -161,6 +161,17 @@ class LinkedList:
             n=next
         self.start_node=prev
 
+    def bubble_sort(self):
+        end=None
+        while end !=self.start_node:
+            p=self.start_node
+            while p.ref !=end:
+                q=p.ref
+                if p.item >q.item:
+                    p.item, q.item=q.item, p.item
+                p=p.ref 
+            end =p
+
 
 new_linked_list = LinkedList()
 new_linked_list.insert_at_end(5)
@@ -203,6 +214,10 @@ new_linked_list.traverse_list()
 
 print("Reverseed List")
 new_linked_list.reverse_list()
+new_linked_list.traverse_list()
+print("Bubble sorted List")
+
+new_linked_list.bubble_sort()
 new_linked_list.traverse_list()
 
 
