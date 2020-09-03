@@ -46,25 +46,29 @@ class LinkedList:
 			new_node.ref=n.ref
 			n.ref=new_node
 
-	def insert_before_another(self,x,data):
-		n=self.start_node
+	def insert_before_item(self,x,data):
+		if self.start_node is None:
+			print("List has no item")
 
 		if x== self.start_node.item:
 			new_node=Node(data)
 			new_node.ref=self.start_node
 			self.start_node=new_node
+			return
 
-		while n is not None:
+		n=self.start_node
+		print(n.ref)
+		while n.ref is not None:
 			if n.ref.item==x:
 				break
 			n=n.ref
 
-			if n is None:
-				print("item not found")
-			else:
-				new_node=Node(data)
-				new_node.ref=n.ref
-				n.ref=new_node
+		if n is None:
+			print("item not found")
+		else:
+			new_node=Node(data)
+			new_node.ref=n.ref
+			n.ref=new_node
 
 	def insert_at_index(self,index,data):
 		if index==1:
@@ -91,7 +95,24 @@ new_linked_list = LinkedList()
 new_linked_list.insert_at_end(5)
 new_linked_list.insert_at_end(10)
 new_linked_list.insert_at_end(15)
+print(" Nodes after insert at end")
 new_linked_list.traverse_list()
+print(" Nodes after insert at start")
+new_linked_list.insert_at_start(20)
+new_linked_list.traverse_list()
+new_linked_list.insert_after_item(10, 17)
+print(" Nodes after insert at after certain item (after 10) insert 17")
+new_linked_list.traverse_list()
+new_linked_list.insert_before_item(17, 25)
+print(" Nodes before insert at after certain item (after 10) insert 25")
+new_linked_list.traverse_list()
+new_linked_list.insert_at_index(3,8)
+print(" insert after index")
+new_linked_list.insert_at_index(3,8)
+new_linked_list.traverse_list()
+
+
+
 
 
 
