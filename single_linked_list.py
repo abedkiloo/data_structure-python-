@@ -111,6 +111,12 @@ class LinkedList:
             n = n.ref
         print('item not found')
 
+    def make_linked_list()
+        n=int(input("Enter the size of linked list"))
+        while n ==0:
+            value = int(input("Enter the value for the node:"))
+            self.insert_at_end(value)
+            n-=1
 
 new_linked_list = LinkedList()
 new_linked_list.insert_at_end(5)
@@ -136,3 +142,7 @@ print("Search for item 5 (found)")
 new_linked_list.search_item(5)
 print("Search for item 59 (not found)")
 new_linked_list.search_item(59)
+def make_linked_list()
+new_linked_list.traverse_list()
+
+
