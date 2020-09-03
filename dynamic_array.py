@@ -2,7 +2,7 @@
 class DynamicArray:
 
     def __init__(self):
-        self.array = [0] *2
+        self.array = [0] * 2
         self.current_index = 0
         self.capacity = 2
 
@@ -53,7 +53,7 @@ class DynamicArray:
         sting_array = "["
         for index, value in enumerate(self.array):
             sting_array += str(value)
-            if  index != len(self.array) and value != self.array[-1]:
+            if index != len(self.array) and value != self.array[-1]:
                 sting_array += ","
         # sting_array + str(x) + ","
         sting_array += "]"
@@ -69,7 +69,6 @@ new_array.add(9)
 new_array.add(2)
 print("Array \n {} \n".format(new_array.get_array_data()))
 new_array.remove()
-
 
 print("Array \n {} \n".format(new_array.get_array_data()))
 print("Size of array \n {} \n".format(new_array.size()))
