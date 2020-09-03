@@ -119,6 +119,49 @@ class LinkedList:
             n -= 1
 
 
+    # deleting linked list
+    def delete_at_start(self):
+        if self.start_node is None:
+            print("The list has no element to delete")
+            return 
+        self.start_node=self.start_node.ref
+
+    def delete_last_element(self):
+        if self.start_node is None:
+            print("The list has no element to delete")
+            return 
+        n=self.start_node
+        while n.ref.ref is not None:
+            n=n.ref
+        n.ref=None
+
+    def delete_element_by_value(self,x):
+
+# deletion of the first element
+        if self.start_node.item==x:
+            self.start_node=self.start_node.ref
+            return
+        n=self.start_node
+        while n is not None:
+            if n.ref.item==x:
+                break
+            n=n.ref
+        if n.ref is None:
+            print("item not found in the list")
+        else:
+            n.ref = n.ref.ref
+
+    def reverse_list(self):
+        prev=None
+        n=self.start_node
+        while n is not None:
+            next=n.ref
+            n.ref=prev
+            prev=n
+            n=next
+        self.start_node=prev
+
+
 new_linked_list = LinkedList()
 new_linked_list.insert_at_end(5)
 new_linked_list.insert_at_end(10)
@@ -144,7 +187,22 @@ new_linked_list.search_item(5)
 print("Search for item 59 (not found)")
 new_linked_list.search_item(59)
 new_linked_list2=LinkedList()
-new_linked_list2.make_linked_list()
-print(" new inserted linked list")
-new_linked_list2.traverse_list()
+# new_linked_list2.make_linked_list()
+# print(" new inserted linked list")
+# new_linked_list2.traverse_list()
+
+print("Delete the last element")
+new_linked_list.delete_last_element()
+new_linked_list.traverse_list()
+
+
+print("Delete the start element")
+new_linked_list.delete_at_start()
+new_linked_list.traverse_list()
+
+
+print("Reverseed List")
+new_linked_list.reverse_list()
+new_linked_list.traverse_list()
+
 
