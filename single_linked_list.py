@@ -1,4 +1,4 @@
-class Note:
+class Node:
 	def __init__(self,data):
 		self.item =data
 		self.ref=None
@@ -45,6 +45,54 @@ class LinkedList:
 			new_node=Node(data)
 			new_node.ref=n.ref
 			n.ref=new_node
+
+	def insert_before_another(self,x,data):
+		n=self.start_node
+
+		if x== self.start_node.item:
+			new_node=Node(data)
+			new_node.ref=self.start_node
+			self.start_node=new_node
+
+		while n is not None:
+			if n.ref.item==x:
+				break
+			n=n.ref
+
+			if n is None:
+				print("item not found")
+			else:
+				new_node=Node(data)
+				new_node.ref=n.ref
+				n.ref=new_node
+
+	def insert_at_index(self,index,data):
+		if index==1:
+			new_node=Node(data)
+			new_node.ref=self.start_node
+			self.start_node=new_node
+
+		i=1
+		n=self.start_node
+		while i < index-1 and n is not None:
+			n=n.ref
+			i+=1
+		if n is None:
+			print("Index not found")
+		else:
+			new_node=Node(data)
+			new_node.ref=n.ref
+			n.ref=new_node
+
+
+
+
+new_linked_list = LinkedList()
+new_linked_list.insert_at_end(5)
+new_linked_list.insert_at_end(10)
+new_linked_list.insert_at_end(15)
+new_linked_list.traverse_list()
+
 
 
 
