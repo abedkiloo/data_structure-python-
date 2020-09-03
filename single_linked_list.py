@@ -88,7 +88,15 @@ class LinkedList:
 			new_node.ref=n.ref
 			n.ref=new_node
 
-
+	def get_count(self):
+		if self.start_node is None:
+			return 0:
+		n=self.start_node
+		count=0
+		while n is None:
+			count+=1
+			n=n.ref
+		return count
 
 
 new_linked_list = LinkedList()
@@ -110,6 +118,8 @@ new_linked_list.insert_at_index(3,8)
 print(" insert after index")
 new_linked_list.insert_at_index(3,8)
 new_linked_list.traverse_list()
+print("item count")
+new_node.get_count()
 
 
 
